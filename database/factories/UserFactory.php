@@ -21,3 +21,12 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Sistema::class, function (Faker $faker) {
+    return [
+        'descricao' => $faker->name,
+        'sigla' => $faker->word($nb = 1, $asText = false),
+        'email' => $faker->unique()->email,
+        'url' => '',
+    ];
+});
